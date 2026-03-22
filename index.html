@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Justin Livelo — Graphic Design Student & Full-Stack Web Developer. jankylazy.dev" />
+  <title>jankylazy.dev — Justin Livelo</title>
+
+  <!-- PT Mono — the only font used site-wide -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       SPLASH SCREEN
+       Full-viewport entry overlay. Logo is provided by user.
+       GSAP will animate the logo down to the header on click.
+       ============================================================ -->
+  <div id="splash" role="button" tabindex="0" aria-label="Click to enter site">
+    <!-- Two logo versions — CSS shows the correct one based on data-theme.
+         Assets are provided by user; do not replace with placeholders. -->
+    <img
+      src="assets/logo/jlpanda_logo_white.png"
+      alt="jankylazy panda logo"
+      class="splash__logo splash__logo--dark"
+      id="splash-logo"
+    />
+    <img
+      src="assets/logo/panda-logo-black.png"
+      alt="jankylazy panda logo"
+      class="splash__logo splash__logo--light"
+    />
+  </div>
+
+  <!-- ============================================================
+       HEADER
+       Sticky. Contains ASCII brand mark, primary nav, theme toggle.
+       ============================================================ -->
+  <header class="site-header" id="top">
+
+    <!-- Left: panda logo — GSAP will animate this in from the splash screen -->
+    <div class="site-header__logo">
+      <img
+        src="assets/logo/jlpanda_logo_white.png"
+        alt="jankylazy panda logo"
+        class="header-logo header-logo--dark"
+      />
+      <img
+        src="assets/logo/panda-logo-black.png"
+        alt="jankylazy panda logo"
+        class="header-logo header-logo--light"
+      />
+    </div>
+
+    <!-- Center: primary nav -->
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul class="site-nav__list">
+        <li><a href="#home"     class="site-nav__link">home.</a></li>
+        <li><a href="#resume"   class="site-nav__link">resume.</a></li>
+        <li><a href="#projects" class="site-nav__link">projects.</a></li>
+        <li><a href="#contact"  class="site-nav__link">contact.</a></li>
+      </ul>
+    </nav>
+
+    <!-- Right: ASCII brand mark + theme toggle -->
+    <div class="site-header__right">
+      <pre class="ascii-logo" aria-label="jankylazy.dev">+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|j|a|n|k|y|l|a|z|y|.|d|e|v|
++-+-+-+-+-+-+-+-+-+-+-+-+-+</pre>
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        aria-label="Toggle dark/light mode"
+        type="button"
+      >
+        <span class="theme-toggle__icon theme-toggle__icon--sun"  aria-hidden="true">&#9728;</span>
+        <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">&#9790;</span>
+      </button>
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- ============================================================
+         HERO — #home
+         Name, title, personal statement, haiku (J/L initials woven in).
+         ============================================================ -->
+    <section id="home" class="section section--home">
+      <div class="hero">
+        <h1 class="hero__name">Justin Livelo</h1>
+        <p class="hero__title">Graphic Design Student &middot; Full-Stack Web Development</p>
+
+        <p class="hero__statement">
+          I build things at the intersection of design and code &mdash; intentional,
+          specific, a little raw. Currently hunting for hybrid UX/front-end roles
+          where craft still matters.
+        </p>
+
+        <!-- Haiku — J and L initials woven into line starts -->
+        <div class="hero__haiku" aria-label="Haiku by Justin Livelo">
+          <p>just a line of code &mdash;</p>
+          <p>lazy paths find the answer</p>
+          <p>leaves the mess behind</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         ABOUT — #about
+         Not a nav item. Woven directly below the hero.
+         Design + dev hybrid angle, pharmacy tech transition story.
+         ============================================================ -->
+    <section id="about" class="section section--about">
+      <h2 class="section__label">about.</h2>
+      <div class="about__content">
+        <p>
+          Graphic design student with a concentration in full-stack web development &mdash;
+          which is a fancy way of saying I make things look good <em>and</em> make them work.
+        </p>
+        <p>
+          Before this, I spent 10+ years as a pharmacy technician. I know what it means
+          to be precise under pressure. I'm bringing that same attention to detail here,
+          just with fewer controlled substances.
+        </p>
+        <p>
+          Currently targeting hybrid UX/front-end internships at creative-tech companies.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         RESUME — #resume
+         Education, experience, skills (as tags), PDF download CTA.
+         ============================================================ -->
+    <section id="resume" class="section section--resume">
+      <h2 class="section__label">resume.</h2>
+
+      <div class="resume__grid">
+
+        <!-- Education block -->
+        <div class="resume__block">
+          <h3 class="resume__block-title">education.</h3>
+          <!-- PLACEHOLDER: replace with real education entries -->
+          <div class="resume__entry">
+            <p class="resume__entry-title">B.A. Graphic Design &mdash; Full-Stack Web Development Concentration</p>
+            <p class="resume__entry-meta">School Name &middot; Expected [Year]</p>
+          </div>
+        </div>
+
+        <!-- Experience block -->
+        <div class="resume__block">
+          <h3 class="resume__block-title">experience.</h3>
+          <!-- PLACEHOLDER: replace with real experience entries -->
+          <div class="resume__entry">
+            <p class="resume__entry-title">Pharmacy Technician</p>
+            <p class="resume__entry-meta">Company Name &middot; 10+ years</p>
+            <p class="resume__entry-desc">
+              Precision, pressure, problem-solving. Applied the same discipline to building things on the web.
+            </p>
+          </div>
+        </div>
+
+        <!-- Skills block — spans full width at tablet, returns to 1 col at desktop -->
+        <div class="resume__block resume__block--skills">
+          <h3 class="resume__block-title">skills.</h3>
+          <!-- PLACEHOLDER: update tags as needed -->
+          <ul class="skills-list" aria-label="Skills">
+            <li class="skills-list__tag">HTML</li>
+            <li class="skills-list__tag">CSS</li>
+            <li class="skills-list__tag">JavaScript</li>
+            <li class="skills-list__tag">GSAP</li>
+            <li class="skills-list__tag">Figma</li>
+            <li class="skills-list__tag">Git</li>
+            <li class="skills-list__tag">React</li>
+            <li class="skills-list__tag">Node.js</li>
+            <li class="skills-list__tag">Typography</li>
+            <li class="skills-list__tag">UX Design</li>
+          </ul>
+        </div>
+
+      </div><!-- /.resume__grid -->
+
+      <!-- Resume PDF download — asset is provided by user -->
+      <a
+        href="assets/resume/justin-livelo-resume.pdf"
+        download
+        class="btn btn--resume"
+        aria-label="Download resume as PDF"
+      >download resume.</a>
+
+    </section>
+
+
+    <!-- ============================================================
+         PROJECTS — #projects
+         Card grid. Cards use dashed border motif. Links to GitHub/live.
+         ============================================================ -->
+    <section id="projects" class="section section--projects">
+      <h2 class="section__label">projects.</h2>
+
+      <div class="projects__grid">
+
+        <!-- PLACEHOLDER: project card 1 -->
+        <article class="project-card">
+          <h3 class="project-card__title">Project Title</h3>
+          <p class="project-card__desc">
+            Short description of what this project does and why it exists.
+          </p>
+          <ul class="project-card__tags skills-list" aria-label="Tech stack">
+            <li class="skills-list__tag">HTML</li>
+            <li class="skills-list__tag">CSS</li>
+            <li class="skills-list__tag">JS</li>
+          </ul>
+          <div class="project-card__links">
+            <a href="#" class="project-card__link" aria-label="View on GitHub">github.</a>
+            <a href="#" class="project-card__link" aria-label="View live site">live.</a>
+          </div>
+        </article>
+
+        <!-- PLACEHOLDER: project card 2 -->
+        <article class="project-card">
+          <h3 class="project-card__title">Project Title</h3>
+          <p class="project-card__desc">
+            Short description of what this project does and why it exists.
+          </p>
+          <ul class="project-card__tags skills-list" aria-label="Tech stack">
+            <li class="skills-list__tag">HTML</li>
+            <li class="skills-list__tag">CSS</li>
+            <li class="skills-list__tag">JS</li>
+          </ul>
+          <div class="project-card__links">
+            <a href="#" class="project-card__link" aria-label="View on GitHub">github.</a>
+            <a href="#" class="project-card__link" aria-label="View live site">live.</a>
+          </div>
+        </article>
+
+        <!-- PLACEHOLDER: project card 3 -->
+        <article class="project-card">
+          <h3 class="project-card__title">Project Title</h3>
+          <p class="project-card__desc">
+            Short description of what this project does and why it exists.
+          </p>
+          <ul class="project-card__tags skills-list" aria-label="Tech stack">
+            <li class="skills-list__tag">HTML</li>
+            <li class="skills-list__tag">CSS</li>
+            <li class="skills-list__tag">JS</li>
+          </ul>
+          <div class="project-card__links">
+            <a href="#" class="project-card__link" aria-label="View on GitHub">github.</a>
+            <a href="#" class="project-card__link" aria-label="View live site">live.</a>
+          </div>
+        </article>
+
+      </div><!-- /.projects__grid -->
+    </section>
+
+
+    <!-- ============================================================
+         CONTACT — #contact
+         Form with dashed border container. Footer is embedded below.
+         ============================================================ -->
+    <section id="contact" class="section section--contact">
+      <h2 class="section__label">contact.</h2>
+
+      <!-- JS will wire up submission handling -->
+      <form class="contact-form" id="contact-form" novalidate>
+
+        <div class="contact-form__group">
+          <label for="contact-name" class="contact-form__label">name.</label>
+          <input
+            type="text"
+            id="contact-name"
+            name="name"
+            class="contact-form__input"
+            autocomplete="name"
+            required
+          />
+        </div>
+
+        <div class="contact-form__group">
+          <label for="contact-email" class="contact-form__label">email.</label>
+          <input
+            type="email"
+            id="contact-email"
+            name="email"
+            class="contact-form__input"
+            autocomplete="email"
+            required
+          />
+        </div>
+
+        <div class="contact-form__group">
+          <label for="contact-message" class="contact-form__label">message.</label>
+          <textarea
+            id="contact-message"
+            name="message"
+            class="contact-form__input contact-form__input--textarea"
+            rows="6"
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--submit">submit.</button>
+
+      </form>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER
+       Embedded below contact. Year is set dynamically in main.js.
+       ============================================================ -->
+  <footer class="site-footer">
+    <p class="site-footer__copy">
+      &copy; Justin Livelo <span id="footer-year"></span>
+    </p>
+    <nav class="site-footer__links" aria-label="Social links">
+      <a
+        href="https://linkedin.com/in/justinlivelo"
+        class="site-footer__link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >linkedin.</a>
+      <a
+        href="https://github.com/jc-livelo"
+        class="site-footer__link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >github.</a>
+      <!-- PLACEHOLDER: add CodePen URL -->
+      <a href="#" class="site-footer__link" target="_blank" rel="noopener noreferrer">codepen.</a>
+      <!-- PLACEHOLDER: add Figma URL -->
+      <a href="#" class="site-footer__link" target="_blank" rel="noopener noreferrer">figma.</a>
+    </nav>
+  </footer>
+
+
+  <!-- GSAP CDN will be added here when animations phase begins -->
+  <script src="main.js"></script>
+
+</body>
+</html>
