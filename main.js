@@ -116,10 +116,14 @@ if (scrollTopBtn) {
   // Show or hide the button based on current scroll position
   const handleScrollTopVisibility = () => {
     if (window.scrollY > 300) {
-      // Remove `hidden` first so the element exists in layout,
-      // then add `is-visible` on the next frame to trigger the transition
+      // Remove `hidden` so the element enters layout, then force a synchronous
+      // reflow before adding `is-visible` — this ensures the browser has processed
+      // the display change before the transition-triggering class is applied.
+      // (A single rAF is not reliable; the browser can batch both changes into
+      // one paint, skipping the transition and leaving the button invisible.)
       scrollTopBtn.removeAttribute('hidden');
-      requestAnimationFrame(() => scrollTopBtn.classList.add('is-visible'));
+      void scrollTopBtn.offsetWidth; // force reflow
+      scrollTopBtn.classList.add('is-visible');
     } else {
       scrollTopBtn.classList.remove('is-visible');
       // Re-add `hidden` after the fade-out transition completes (250ms)
