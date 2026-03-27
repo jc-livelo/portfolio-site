@@ -30,7 +30,7 @@
       id="splash-logo"
     />
     <img
-      src="assets/logo/panda-logo-black.png"
+      src="assets/logo/jlpanda_logo_black.png"
       alt="jankylazy panda logo"
       class="splash__logo splash__logo--light"
     />
@@ -50,7 +50,7 @@
         class="header-logo header-logo--dark"
       />
       <img
-        src="assets/logo/panda-logo-black.png"
+        src="assets/logo/jlpanda_logo_black.png"
         alt="jankylazy panda logo"
         class="header-logo header-logo--light"
       />
@@ -66,11 +66,8 @@
       </ul>
     </nav>
 
-    <!-- Right: ASCII brand mark + theme toggle -->
+    <!-- Right: theme toggle + ASCII brand mark -->
     <div class="site-header__right">
-      <pre class="ascii-logo" aria-label="jankylazy.dev">+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|j|a|n|k|y|l|a|z|y|.|d|e|v|
-+-+-+-+-+-+-+-+-+-+-+-+-+-+</pre>
       <button
         class="theme-toggle"
         id="theme-toggle"
@@ -80,6 +77,13 @@
         <span class="theme-toggle__icon theme-toggle__icon--sun"  aria-hidden="true">&#9728;</span>
         <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">&#9790;</span>
       </button>
+      <pre class="ascii-logo" aria-label="jankylazy.dev">
+  __               __           __                          __
+ |__|.---.-.-----.|  |--.--.--.|  |.---.-.-----.--.--.  .--|  |.-----.--.--.
+ |  ||  _  |     ||    <|  |  ||  ||  _  |-- __|  |  |__|  _  ||  -__|  |  |
+ |  ||___._|__|__||__|__|___  ||__||___._|_____|___  |__|_____||_____|\___/
+|___|                   |_____|                |_____|
+      </pre>
     </div>
 
   </header>
@@ -94,19 +98,19 @@
     <section id="home" class="section section--home">
       <div class="hero">
         <h1 class="hero__name">Justin Livelo</h1>
-        <p class="hero__title">Graphic Design Student &middot; Full-Stack Web Development</p>
+        <p class="hero__title">Graphic Design Student &middot; Full-Stack Web Development &middot; (Previously) Pharmacy Technician</p>
 
         <p class="hero__statement">
-          I build things at the intersection of design and code &mdash; intentional,
-          specific, a little raw. Currently hunting for hybrid UX/front-end roles
+          I build things at the intersection of design and code: intentional,
+          specific, a little rough around the edges. Currently hunting for hybrid UX/front-end roles
           where craft still matters.
         </p>
 
         <!-- Haiku — J and L initials woven into line starts -->
         <div class="hero__haiku" aria-label="Haiku by Justin Livelo">
-          <p>just a line of code &mdash;</p>
-          <p>lazy paths find the answer</p>
-          <p>leaves the mess behind</p>
+          <p>Janky and Lazy</p>
+          <p>Somehow, I still get it done.</p>
+          <p>Don't ask how -- just know.</p>
         </div>
       </div>
     </section>
@@ -122,12 +126,12 @@
       <div class="about__content">
         <p>
           Graphic design student with a concentration in full-stack web development &mdash;
-          which is a fancy way of saying I make things look good <em>and</em> make them work.
+          which is just a fancy way of saying I make things look good <em>and</em> make them work.
         </p>
         <p>
           Before this, I spent 10+ years as a pharmacy technician. I know what it means
           to be precise under pressure. I'm bringing that same attention to detail here,
-          just with fewer controlled substances.
+          just with <em>fewer</em> controlled substances.
         </p>
         <p>
           Currently targeting hybrid UX/front-end internships at creative-tech companies.
@@ -150,8 +154,8 @@
           <h3 class="resume__block-title">education.</h3>
           <!-- PLACEHOLDER: replace with real education entries -->
           <div class="resume__entry">
-            <p class="resume__entry-title">B.A. Graphic Design &mdash; Full-Stack Web Development Concentration</p>
-            <p class="resume__entry-meta">School Name &middot; Expected [Year]</p>
+            <p class="resume__entry-title">B.S. Graphic Information Technology &mdash; Full-Stack Web Development Concentration</p>
+            <p class="resume__entry-meta">Arizona State University &middot; Expected Spring 2027.</p>
           </div>
         </div>
 
@@ -161,7 +165,7 @@
           <!-- PLACEHOLDER: replace with real experience entries -->
           <div class="resume__entry">
             <p class="resume__entry-title">Pharmacy Technician</p>
-            <p class="resume__entry-meta">Company Name &middot; 10+ years</p>
+            <p class="resume__entry-meta">CVS Pharmacy; LB Memorial Care; Kroger Speciality Infusion &middot; 10+ years</p>
             <p class="resume__entry-desc">
               Precision, pressure, problem-solving. Applied the same discipline to building things on the web.
             </p>
@@ -176,13 +180,19 @@
             <li class="skills-list__tag">HTML</li>
             <li class="skills-list__tag">CSS</li>
             <li class="skills-list__tag">JavaScript</li>
+            <li class="skills-list__tag">Python</li>
             <li class="skills-list__tag">GSAP</li>
             <li class="skills-list__tag">Figma</li>
+            <li class="skills-list__tag">FigJam</li>
+            <li class="skills-list__tag">Miro</li>
             <li class="skills-list__tag">Git</li>
-            <li class="skills-list__tag">React</li>
-            <li class="skills-list__tag">Node.js</li>
+            <li class="skills-list__tag">Graphic Design</li>
+            <li class="skills-list__tag">Photography</li>
+            <li class="skills-list__tag">Adobe Creative Cloud</li>
+            <li class="skills-list__tag">Google Suite</li>
             <li class="skills-list__tag">Typography</li>
             <li class="skills-list__tag">UX Design</li>
+            <li class="skills-list__tag">User Testing</li>
           </ul>
         </div>
 
@@ -190,7 +200,7 @@
 
       <!-- Resume PDF download — asset is provided by user -->
       <a
-        href="assets/resume/justin-livelo-resume.pdf"
+        href="assets/resume/Justin_Livelo_Resume-Honda.pdf"
         download
         class="btn btn--resume"
         aria-label="Download resume as PDF"
@@ -210,52 +220,68 @@
 
         <!-- PLACEHOLDER: project card 1 -->
         <article class="project-card">
-          <h3 class="project-card__title">Project Title</h3>
+          <h3 class="project-card__title">20-Page Subculture Zine</h3>
           <p class="project-card__desc">
-            Short description of what this project does and why it exists.
+            Group project for GIT 303 (Digital Publishing) course. Appointed Lead Designer: proposed Streetwear subculture (personal connection/upbringing); designed page 6 - 9; created Miro mood board; declared color palette; produced billboard design and billboard mockup.
           </p>
           <ul class="project-card__tags skills-list" aria-label="Tech stack">
-            <li class="skills-list__tag">HTML</li>
-            <li class="skills-list__tag">CSS</li>
-            <li class="skills-list__tag">JS</li>
+            <li class="skills-list__tag">Print Design</li>
+            <li class="skills-list__tag">Photoshop</li>
+            <li class="skills-list__tag">InDesign</li>
+            <li class="skills-list__tag">Google Suite</li>
           </ul>
           <div class="project-card__links">
-            <a href="#" class="project-card__link" aria-label="View on GitHub">github.</a>
-            <a href="#" class="project-card__link" aria-label="View live site">live.</a>
+            <!-- TODO: add URL to view the zine -->
+            <a href="assets/scm/rebel_society_scm-magazine single.pdf" 
+                class="project-card__link" 
+                target="_blank" 
+                rel="noopener noreferrer">view.
+            </a>
           </div>
         </article>
 
         <!-- PLACEHOLDER: project card 2 -->
         <article class="project-card">
-          <h3 class="project-card__title">Project Title</h3>
+          <h3 class="project-card__title">40-Second Commercial</h3>
           <p class="project-card__desc">
-            Short description of what this project does and why it exists.
+            Independent project for GIT 315 (Digital Video Techniques). Planned, shot and edited a 40-second (including 10-second slate) commercial for a trading card display phone case.
           </p>
           <ul class="project-card__tags skills-list" aria-label="Tech stack">
-            <li class="skills-list__tag">HTML</li>
-            <li class="skills-list__tag">CSS</li>
-            <li class="skills-list__tag">JS</li>
+            <li class="skills-list__tag">Video Production</li>
+            <li class="skills-list__tag">iPhone</li>
+            <li class="skills-list__tag">Premiere Pro</li>
+            <li class="skills-list__tag">YouTube</li>
           </ul>
           <div class="project-card__links">
-            <a href="#" class="project-card__link" aria-label="View on GitHub">github.</a>
-            <a href="#" class="project-card__link" aria-label="View live site">live.</a>
+            <a href="https://youtu.be/fkfuA-qaA3o" class="project-card__link" aria-label="Watch on YouTube" target="_blank" rel="noopener noreferrer">watch.</a>
           </div>
         </article>
 
         <!-- PLACEHOLDER: project card 3 -->
         <article class="project-card">
-          <h3 class="project-card__title">Project Title</h3>
+          <h3 class="project-card__title">Key Flow Improvement</h3>
           <p class="project-card__desc">
-            Short description of what this project does and why it exists.
+            Independent project for GIT 340 (Info Design /  Usability; UX upper-level elective). Conducted user testing with 3 participants to find areas of improvement with eDreams.net website. Created task flow diagram; crazy 8's; wireframes (mid and high fidelity); final design; and written Design rationale.
           </p>
           <ul class="project-card__tags skills-list" aria-label="Tech stack">
-            <li class="skills-list__tag">HTML</li>
-            <li class="skills-list__tag">CSS</li>
-            <li class="skills-list__tag">JS</li>
+            <li class="skills-list__tag">User Testing</li>
+            <li class="skills-list__tag">UX Design</li>
+            <li class="skills-list__tag">Figma</li>
+            <li class="skills-list__tag">FigJam</li>
           </ul>
           <div class="project-card__links">
-            <a href="#" class="project-card__link" aria-label="View on GitHub">github.</a>
-            <a href="#" class="project-card__link" aria-label="View live site">live.</a>
+            <!-- TODO: add Figma project URL -->
+            
+            <a href="https://www.figma.com/design/y9EuSlaBKFumrsCYC4aAQ9/Livelo_340_Final?node-id=0-1&t=76xtVGm0cEYhlGKn-1" 
+                class="project-card__link" 
+                target="_blank" 
+                rel="noopener noreferrer">figma.
+            </a>
+            <a href="assets/writeup/Livelo_Justin_WriteUp.pdf" 
+                class="project-card__link" 
+                target="_blank" 
+                rel="noopener noreferrer">write-up.
+            </a>
           </div>
         </article>
 
@@ -271,7 +297,7 @@
       <h2 class="section__label">contact.</h2>
 
       <!-- JS will wire up submission handling -->
-      <form class="contact-form" id="contact-form" novalidate>
+      <form class="contact-form" id="contact-form" action="https://formspree.io/f/xnjonoqz" method="POST">
 
         <div class="contact-form__group">
           <label for="contact-name" class="contact-form__label">name.</label>
@@ -294,7 +320,7 @@
             class="contact-form__input"
             autocomplete="email"
             required
-          />
+        </form>
         </div>
 
         <div class="contact-form__group">
@@ -337,15 +363,16 @@
         target="_blank"
         rel="noopener noreferrer"
       >github.</a>
-      <!-- PLACEHOLDER: add CodePen URL -->
-      <a href="#" class="site-footer__link" target="_blank" rel="noopener noreferrer">codepen.</a>
-      <!-- PLACEHOLDER: add Figma URL -->
+      <a href="https://codepen.io/jc-livelo" class="site-footer__link" target="_blank" rel="noopener noreferrer">codepen.</a>
+      <!-- TODO: add Figma profile URL -->
       <a href="#" class="site-footer__link" target="_blank" rel="noopener noreferrer">figma.</a>
+      <a href="https://www.flickr.com/people/justinlivelo/" class="site-footer__link" target="_blank" rel="noopener noreferrer">flickr.</a>
     </nav>
   </footer>
 
 
-  <!-- GSAP CDN will be added here when animations phase begins -->
+  <!-- GSAP — loaded before main.js so gsap is available on script execution -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="main.js"></script>
 
 </body>

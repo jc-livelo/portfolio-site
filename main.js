@@ -5,27 +5,69 @@
 
 
 /* ------------------------------------------------------------
-   SPLASH SCREEN
-   Hides #splash on click or Enter/Space keypress.
-   GSAP transition will replace the display:none once animations
-   are added — this is the functional placeholder.
+   SPLASH SCREEN — GSAP animation
+   On click: the logo punches in (scale up toward the eye area),
+   the overlay fades out, then main content fades in.
    ------------------------------------------------------------ */
 const splash = document.getElementById('splash');
+const splashLogo = document.getElementById('splash-logo');
+const mainContent = document.querySelector('main');
 
 if (splash) {
   const dismissSplash = () => {
-    splash.style.display = 'none';
+    // Lock out repeat triggers while the animation is running
+    splash.removeEventListener('click', dismissSplash);
+    splash.removeEventListener('keydown', handleKey);
+
+    const tl = gsap.timeline();
+
+    // 1. Scale the logo up toward the eye area (transform-origin: 50% 38%).
+    //    This gives the impression of zooming into the panda's face.
+    tl.to(splashLogo, {
+      scale: 7,
+      transformOrigin: '52% 42%',
+      duration: 0.8,
+      ease: 'power2.in',
+    })
+
+    // 2. Simultaneously fade the whole splash overlay to transparent.
+    .to(splash, {
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power2.in',
+    }, '<') // '<' starts this tween at the same time as the previous one
+
+    // 3. After the 0.8s animation completes, pull the overlay out of layout.
+    .call(() => {
+      splash.style.display = 'none';
+    })
+
+    // 4. Fade main content in over 0.4s now that the splash is gone.
+    .to(mainContent, {
+      opacity: 1,
+      duration: 0.4,
+      ease: 'power1.out',
+    })
+
+    // 5. Slide the header logo down from -10px and fade it in.
+    //    Offset by 0.1s so it trails slightly behind the main content fade.
+    .fromTo('.site-header__logo',
+      { opacity: 0, y: -10 },
+      { opacity: 1, y: 0, duration: 0.25, ease: 'power2.out' },
+      '-=0.3' // starts 0.1s after step 4 begins (0.4s - 0.3s = 0.1s offset)
+    );
   };
 
-  splash.addEventListener('click', dismissSplash);
-
-  // Keyboard support — role="button" requires Enter and Space to work
-  splash.addEventListener('keydown', (e) => {
+  // Keyboard support — role="button" requires Enter and Space to activate
+  const handleKey = (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       dismissSplash();
     }
-  });
+  };
+
+  splash.addEventListener('click', dismissSplash);
+  splash.addEventListener('keydown', handleKey);
 }
 
 

@@ -45,6 +45,10 @@
    body {
      line-height: 1;
    }
+
+   main {
+    opacity: 0;
+   }
    
    ol, ul {
      list-style: none;
@@ -336,6 +340,11 @@ h3 {
   white-space: pre;
   color: var(--color-text);
   transition: color var(--transition);
+}
+
+[data-theme="light"] .ascii-logo {
+  color: #111111;
+  text-shadow: 0.3px 0 0 #000000, -0.3px 0 0 #000000;
 }
 
 /* Nav — takes up remaining space and centers its links */
