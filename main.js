@@ -53,7 +53,7 @@ if (splash) {
     //    Offset by 0.1s so it trails slightly behind the main content fade.
     .fromTo('.site-header__logo',
       { opacity: 0, y: -10 },
-      { opacity: 1, y: 0, duration: 0.25, ease: 'power2.out' },
+      { opacity: 1, y: 0, duration: 0.1, ease: 'power2.out' },
       '-=0.3' // starts 0.1s after step 4 begins (0.4s - 0.3s = 0.1s offset)
     );
   };
@@ -99,6 +99,43 @@ if (themeToggle) {
     const next = current === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
+  });
+}
+
+
+/* ------------------------------------------------------------
+   SCROLL-TO-TOP BUTTON
+   Mobile only (CSS hides it at 768px+). Shows after the user
+   scrolls past 300px; smooth-scrolls back to the top on click.
+   Uses the `hidden` attribute to keep it out of tab order when
+   invisible, plus an `is-visible` class for the CSS transition.
+   ------------------------------------------------------------ */
+const scrollTopBtn = document.getElementById('scroll-top');
+
+if (scrollTopBtn) {
+  // Show or hide the button based on current scroll position
+  const handleScrollTopVisibility = () => {
+    if (window.scrollY > 300) {
+      // Remove `hidden` first so the element exists in layout,
+      // then add `is-visible` on the next frame to trigger the transition
+      scrollTopBtn.removeAttribute('hidden');
+      requestAnimationFrame(() => scrollTopBtn.classList.add('is-visible'));
+    } else {
+      scrollTopBtn.classList.remove('is-visible');
+      // Re-add `hidden` after the fade-out transition completes (250ms)
+      setTimeout(() => {
+        if (!scrollTopBtn.classList.contains('is-visible')) {
+          scrollTopBtn.setAttribute('hidden', '');
+        }
+      }, 250);
+    }
+  };
+
+  window.addEventListener('scroll', handleScrollTopVisibility, { passive: true });
+
+  // Smooth-scroll to top on click
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
 

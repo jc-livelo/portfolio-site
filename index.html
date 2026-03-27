@@ -101,16 +101,16 @@
         <p class="hero__title">Graphic Design Student &middot; Full-Stack Web Development &middot; (Previously) Pharmacy Technician</p>
 
         <p class="hero__statement">
-          I build things at the intersection of design and code: intentional,
-          specific, a little rough around the edges. Currently hunting for hybrid UX/front-end roles
+          I build things at the intersection of design and code -- intentional,
+          detail-driven, and a little unconventional. Currently seeking hybrid UX/front-end roles
           where craft still matters.
         </p>
 
         <!-- Haiku — J and L initials woven into line starts -->
         <div class="hero__haiku" aria-label="Haiku by Justin Livelo">
-          <p>Janky and Lazy</p>
-          <p>Somehow, I still get it done.</p>
-          <p>Don't ask how -- just know.</p>
+          <p>Janky and Lazy.</p>
+          <p>Yet, I always get it done.</p>
+          <p>The work shows itself.</p>
         </div>
       </div>
     </section>
@@ -132,9 +132,6 @@
           Before this, I spent 10+ years as a pharmacy technician. I know what it means
           to be precise under pressure. I'm bringing that same attention to detail here,
           just with <em>fewer</em> controlled substances.
-        </p>
-        <p>
-          Currently targeting hybrid UX/front-end internships at creative-tech companies.
         </p>
       </div>
     </section>
@@ -222,7 +219,7 @@
         <article class="project-card">
           <h3 class="project-card__title">20-Page Subculture Zine</h3>
           <p class="project-card__desc">
-            Group project for GIT 303 (Digital Publishing) course. Appointed Lead Designer: proposed Streetwear subculture (personal connection/upbringing); designed page 6 - 9; created Miro mood board; declared color palette; produced billboard design and billboard mockup.
+            Lead Designer on a group digital publishing project for GIT 303. Proposed and championed Streetwear as the subculture theme — a personal connection rooted in upbringing. Designed pages 6–9, built the Miro mood board, defined the color palette, and produced the billboard concept and mockup. Responsible for the visual direction the team executed against.
           </p>
           <ul class="project-card__tags skills-list" aria-label="Tech stack">
             <li class="skills-list__tag">Print Design</li>
@@ -244,7 +241,7 @@
         <article class="project-card">
           <h3 class="project-card__title">40-Second Commercial</h3>
           <p class="project-card__desc">
-            Independent project for GIT 315 (Digital Video Techniques). Planned, shot and edited a 40-second (including 10-second slate) commercial for a trading card display phone case.
+            Sole creator of a product commercial for GIT 315, shot and edited end-to-end on iPhone using Premiere Pro. Concepted, planned, filmed, and cut a 40-second spot (plus 10-second slate) for a trading card display phone case. Managed every stage of production independently — from script to final export.
           </p>
           <ul class="project-card__tags skills-list" aria-label="Tech stack">
             <li class="skills-list__tag">Video Production</li>
@@ -261,8 +258,9 @@
         <article class="project-card">
           <h3 class="project-card__title">Key Flow Improvement</h3>
           <p class="project-card__desc">
-            Independent project for GIT 340 (Info Design /  Usability; UX upper-level elective). Conducted user testing with 3 participants to find areas of improvement with eDreams.net website. Created task flow diagram; crazy 8's; wireframes (mid and high fidelity); final design; and written Design rationale.
-          </p>
+            UX audit and redesign of a broken booking flow on eDreams.net, completed for GIT 340.
+            Identified friction points through user testing with 3 participants, then mapped the task flow, rapid-sketched 8 concepts, and produced mid and high-fidelity wireframes in Figma with a written design rationale.
+            Result: A cleaner, task-centered navigation that reduced steps to reach "Manage Booking" — documented from research through final design.          </p>
           <ul class="project-card__tags skills-list" aria-label="Tech stack">
             <li class="skills-list__tag">User Testing</li>
             <li class="skills-list__tag">UX Design</li>
@@ -348,7 +346,7 @@
        ============================================================ -->
   <footer class="site-footer">
     <p class="site-footer__copy">
-      &copy; Justin Livelo <span id="footer-year"></span>
+      <em>&copy;</em> Justin Livelo <span id="footer-year"></span>
     </p>
     <nav class="site-footer__links" aria-label="Social links">
       <a
@@ -370,6 +368,15 @@
     </nav>
   </footer>
 
+
+  <!-- Scroll-to-top — mobile only, shown via JS after 300px scroll -->
+  <button
+    id="scroll-top"
+    class="scroll-top"
+    aria-label="Scroll to top"
+    type="button"
+    hidden
+  >&#8593;</button>
 
   <!-- GSAP — loaded before main.js so gsap is available on script execution -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

@@ -112,7 +112,7 @@
   --color-bg:     #ffffff;
   --color-text:   #000000;
   --color-border: #000000;
-  --color-muted:  rgba(0, 0, 0, 0.45);
+  --color-muted:  rgba(0, 0, 0, 0.55);
   /* accent stays #89cff0 in both modes */
 }
 
@@ -223,6 +223,7 @@ h3 {
   padding: var(--space-lg) var(--content-padding);
   max-width: var(--max-width);
   margin: 0 auto;
+  scroll-margin-top: 120px;
 }
 
 /* Section label — small, muted, dashed underline */
@@ -718,6 +719,51 @@ h3 {
 .site-footer__link:focus-visible {
   color: var(--color-accent);
   outline: none;
+}
+
+
+/* ============================================================
+   SCROLL-TO-TOP BUTTON
+   Mobile only (hidden at 768px+). JS toggles the `hidden`
+   attribute; opacity/transform handle the visible transition.
+   ============================================================ */
+.scroll-top {
+  /* Fixed bottom-right, above any other stacking content */
+  position: fixed;
+  bottom: var(--space-md);
+  right: var(--space-md);
+  z-index: 200;
+
+  font-family: var(--font-mono);
+  font-size: 1.125rem;
+  line-height: 1;
+  padding: 0.4rem 0.6rem;
+
+  background: none;
+  border: var(--border-dash);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  cursor: url('assets/cursor/panda-paw.svg') 4 2, pointer;
+
+  /* Fade + slight slide in from below */
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Visible state — JS removes `hidden` then next frame adds this class */
+.scroll-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hide entirely on tablet and up — this is a mobile-only affordance */
+@media (min-width: 768px) {
+  .scroll-top {
+    display: none !important;
+  }
 }
 
 
