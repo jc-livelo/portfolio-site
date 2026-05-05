@@ -309,12 +309,14 @@ h3 {
   flex-shrink: 0;
 }
 
-/* Header logo: height matches the 3-line ASCII art block
-   (3 lines × 0.875rem font × 1.5 line-height ≈ 3.94rem) */
+/* Header logo: fixed width prevents layout shift when swapping dark/light logos.
+   The two PNGs have different intrinsic sizes, so width: auto shifts the flex nav.
+   object-fit: contain keeps aspect ratio; object-position: left center hugs the left edge. */
 .header-logo {
   height: 3.9375rem;
-  width: auto;
+  width: 5rem;
   object-fit: contain;
+  object-position: left center;
   display: block;
 }
 
