@@ -433,6 +433,15 @@ h3 {
   margin-bottom: var(--space-md);
 }
 
+/* Stacks two inline characters vertically (e.g. halo above heart in Papa's quote) */
+.stacked-icon {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  vertical-align: middle;
+}
+
 /* Haiku — dashed left border, indented, muted tone */
 .hero__haiku {
   border-left: var(--border-dash);
