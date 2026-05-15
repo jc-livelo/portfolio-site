@@ -10,7 +10,6 @@
    the overlay fades out, then main content fades in.
    ------------------------------------------------------------ */
 const splash = document.getElementById('splash');
-const splashLogo = document.getElementById('splash-logo');
 const mainContent = document.querySelector('main');
 
 if (splash) {
@@ -18,6 +17,12 @@ if (splash) {
     // Lock out repeat triggers while the animation is running
     splash.removeEventListener('click', dismissSplash);
     splash.removeEventListener('keydown', handleKey);
+
+    // Target whichever logo is visible — depends on the active theme at click time
+    const theme = document.documentElement.getAttribute('data-theme');
+    const splashLogo = splash.querySelector(
+      theme === 'light' ? '.splash__logo--light' : '.splash__logo--dark'
+    );
 
     const tl = gsap.timeline();
 
