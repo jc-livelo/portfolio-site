@@ -796,9 +796,10 @@ h3 {
     align-items: center;
   }
 
-  /* Resume: 2-column grid */
+  /* Resume: 2-column grid; cards size to content */
   .resume__grid {
     grid-template-columns: repeat(2, 1fr);
+    align-items: start;
   }
 
   /* Skills block spans both columns at this breakpoint */
@@ -843,13 +844,24 @@ h3 {
     padding: var(--space-xl) var(--content-padding);
   }
 
-  /* Resume: 3-column grid; skills joins the row */
+  /* Resume: education + experience side by side, skills full-width below */
   .resume__grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
   }
 
   .resume__block--skills {
-    grid-column: auto; /* reset from tablet span */
+    grid-column: 1 / -1;
+  }
+
+  /* Skills groups: three internal columns inside the full-width card */
+  .skills-groups {
+    flex-direction: row;
+    gap: var(--space-md);
+  }
+
+  .skills-group {
+    flex: 1;
   }
 
   /* Projects: 3-column grid */
