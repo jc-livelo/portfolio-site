@@ -9,6 +9,7 @@
   <!-- PT Mono — the only font used site-wide -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet" />
 
   <link rel="icon" type="image/png" href="assets/logo/jlpanda_logo_white.png" />
@@ -25,13 +26,14 @@
     <!-- Two logo versions — CSS shows the correct one based on data-theme.
          Assets are provided by user; do not replace with placeholders. -->
     <img
-      src="assets/logo/jlpanda_logo_white.png"
+      src="assets/logo/jlpanda_logo_white.webp"
       alt="jankylazy panda logo"
       class="splash__logo splash__logo--dark"
       id="splash-logo"
+      fetchpriority="high"
     />
     <img
-      src="assets/logo/jlpanda_logo_black.png"
+      src="assets/logo/jlpanda_logo_black.webp"
       alt="jankylazy panda logo"
       class="splash__logo splash__logo--light"
     />
@@ -46,12 +48,12 @@
     <!-- Left: panda logo — GSAP will animate this in from the splash screen -->
     <div class="site-header__logo">
       <img
-        src="assets/logo/jlpanda_logo_white.png"
+        src="assets/logo/jlpanda_logo_white.webp"
         alt="jankylazy panda logo"
         class="header-logo header-logo--dark"
       />
       <img
-        src="assets/logo/jlpanda_logo_black.png"
+        src="assets/logo/jlpanda_logo_black.webp"
         alt="jankylazy panda logo"
         class="header-logo header-logo--light"
       />
@@ -78,7 +80,7 @@
         <span class="theme-toggle__icon theme-toggle__icon--sun"  aria-hidden="true">&#9728;</span>
         <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">&#9790;</span>
       </button>
-      <pre class="ascii-logo" aria-label="jankylazy.dev">
+      <pre class="ascii-logo" aria-label="jankylazy.dev" aria-hidden="true">
   __               __           __                          __
  |__|.---.-.-----.|  |--.--.--.|  |.---.-.-----.--.--.  .--|  |.-----.--.--.
  |  ||  _  |     ||    <|  |  ||  ||  _  |-- __|  |  |__|  _  ||  -__|  |  |
@@ -102,7 +104,7 @@
         <p class="hero__title">Graphic Design Student &middot; Full-Stack Web Development &middot; (Previously) Pharmacy Technician</p>
 
         <p class="hero__statement">
-          I build things at the intersection of design and code. I care about how things look,
+          I design things and then I build them. I care about how things look,
           how they work, and why they exist. Currently looking for hybrid UX/front-end roles.
         </p>
 
@@ -160,7 +162,7 @@
           <!-- PLACEHOLDER: replace with real experience entries -->
           <div class="resume__entry">
             <p class="resume__entry-title">Pharmacy Technician</p>
-            <p class="resume__entry-meta">CVS Pharmacy; LB Memorial Care; Kroger Speciality Infusion &middot; 10~ years</p>
+            <p class="resume__entry-meta">CVS Pharmacy; LB Memorial Care; Kroger Specialty Infusion &middot; ~10 years</p>
             <p class="resume__entry-desc">
               Precision, pressure, problem-solving. Applied the same discipline to building things on the web.
             </p>
@@ -170,25 +172,41 @@
         <!-- Skills block — spans full width at tablet, returns to 1 col at desktop -->
         <div class="resume__block resume__block--skills">
           <h3 class="resume__block-title">skills.</h3>
-          <!-- PLACEHOLDER: update tags as needed -->
-          <ul class="skills-list" aria-label="Skills">
-            <li class="skills-list__tag">HTML</li>
-            <li class="skills-list__tag">CSS</li>
-            <li class="skills-list__tag">JavaScript</li>
-            <li class="skills-list__tag">Python</li>
-            <li class="skills-list__tag">GSAP</li>
-            <li class="skills-list__tag">Figma</li>
-            <li class="skills-list__tag">FigJam</li>
-            <li class="skills-list__tag">Miro</li>
-            <li class="skills-list__tag">Git</li>
-            <li class="skills-list__tag">Graphic Design</li>
-            <li class="skills-list__tag">Photography</li>
-            <li class="skills-list__tag">Adobe Creative Cloud</li>
-            <li class="skills-list__tag">Google Suite</li>
-            <li class="skills-list__tag">Typography</li>
-            <li class="skills-list__tag">UX Design</li>
-            <li class="skills-list__tag">User Testing</li>
-          </ul>
+          <div class="skills-groups">
+            <div class="skills-group">
+              <h4 class="skills-group__label">design.</h4>
+              <ul class="skills-list" aria-label="Design skills">
+                <li class="skills-list__tag">Graphic Design</li>
+                <li class="skills-list__tag">Typography</li>
+                <li class="skills-list__tag">UX Design</li>
+                <li class="skills-list__tag">User Testing</li>
+                <li class="skills-list__tag">Motion Design</li>
+                <li class="skills-list__tag">Photography</li>
+              </ul>
+            </div>
+            <div class="skills-group">
+              <h4 class="skills-group__label">development.</h4>
+              <ul class="skills-list" aria-label="Development skills">
+                <li class="skills-list__tag">HTML</li>
+                <li class="skills-list__tag">CSS</li>
+                <li class="skills-list__tag">JavaScript</li>
+                <li class="skills-list__tag">Python</li>
+                <li class="skills-list__tag">GSAP</li>
+                <li class="skills-list__tag">Git</li>
+              </ul>
+            </div>
+            <div class="skills-group">
+              <h4 class="skills-group__label">tools.</h4>
+              <ul class="skills-list" aria-label="Tools">
+                <li class="skills-list__tag">Figma</li>
+                <li class="skills-list__tag">Photoshop</li>
+                <li class="skills-list__tag">Illustrator</li>
+                <li class="skills-list__tag">InDesign</li>
+                <li class="skills-list__tag">Premiere Pro</li>
+                <li class="skills-list__tag">After Effects</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
       </div><!-- /.resume__grid -->
@@ -213,6 +231,23 @@
 
       <div class="projects__grid">
 
+        <article class="project-card">
+          <h3 class="project-card__title">This Site — jankylazy.dev</h3>
+          <p class="project-card__desc">
+            Designed and built this portfolio from the ground up — no frameworks, no templates. Vanilla HTML/CSS/JS with GSAP animation, dark/light theme toggle, custom cursor, and accessibility patterns, deployed to a custom domain via GitHub Pages. Evolved from a fully hand-coded, self-taught build into the current iteration, developed with AI-assisted pair programming — designed, directed, and shipped by me.
+          </p>
+          <ul class="project-card__tags skills-list" aria-label="Tech stack">
+            <li class="skills-list__tag">HTML</li>
+            <li class="skills-list__tag">CSS</li>
+            <li class="skills-list__tag">JavaScript</li>
+            <li class="skills-list__tag">GSAP</li>
+            <li class="skills-list__tag">GitHub Pages</li>
+          </ul>
+          <div class="project-card__links">
+            <a href="https://github.com/jc-livelo/portfolio-site" class="project-card__link" target="_blank" rel="noopener noreferrer">view source.</a>
+          </div>
+        </article>
+
         <!-- PLACEHOLDER: project card 1 -->
         <article class="project-card">
           <h3 class="project-card__title">20-Page Subculture Zine</h3>
@@ -227,9 +262,9 @@
           </ul>
           <div class="project-card__links">
             <!-- TODO: add URL to view the zine -->
-            <a href="assets/scm/rebel_society_scm-magazine single.pdf" 
-                class="project-card__link" 
-                target="_blank" 
+            <a href="assets/scm/rebel_society_scm-magazine-single.pdf"
+                class="project-card__link"
+                target="_blank"
                 rel="noopener noreferrer">view.
             </a>
           </div>
